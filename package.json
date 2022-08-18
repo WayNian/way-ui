@@ -15,7 +15,7 @@
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --fix",
-    "*.{json,css,scss}": "prettier --write",
+    "*.{json,yml,css,scss}": "prettier --write",
     "package.json": "sort-package-json"
   },
   "devDependencies": {
