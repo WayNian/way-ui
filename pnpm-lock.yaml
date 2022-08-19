@@ -67,8 +67,10 @@ importers:
       vite: ^3.0.7
       vue: ^3.2.37
       vue-tsc: ^0.39.5
+      way-ui: workspace:^1.0.0
     dependencies:
       vue: 3.2.37
+      way-ui: link:../packages
     devDependencies:
       '@vitejs/plugin-vue': 3.0.3_vite@3.0.7+vue@3.2.37
       typescript: 4.7.4
