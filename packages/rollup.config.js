@@ -8,7 +8,7 @@ export default defineConfig({
   output: {
     name: "packages",
     file: "lib/index.js",
-    format: "es",
+    format: "esm",
     globals: {
       vue: "Vue",
     },
