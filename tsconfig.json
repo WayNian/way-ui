@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "preserve",
+    "module": "ES2020"
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", ".temp", "lib", "dist"]
+}

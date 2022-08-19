@@ -1,16 +1,30 @@
 {
-  "name": "packages",
+  "name": "way-ui",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "rollup": "^2.78.0"
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@vue/compiler-sfc": "^3.2.37",
+    "rollup": "^2.78.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "rollup-plugin-vue": "^6.0.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
   }
 }
