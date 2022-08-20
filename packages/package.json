@@ -9,7 +9,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "vite build",
-    "build:rollup": "rollup -c",
+    "build:rollup": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
