@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     target: "modules",
     //打包文件目录
-    outDir: "es",
+    outDir: "lib",
     //压缩
     minify: false,
     lib: {
@@ -27,7 +27,7 @@ export default defineConfig({
           //让打包目录和我们目录对应
           preserveModules: true,
           //配置打包根目录
-          dir: "lib1",
+          dir: "lib",
           preserveModulesRoot: "src",
           globals: {
             vue: "Vue",
@@ -55,7 +55,6 @@ export default defineConfig({
     //   tsConfigFilePath: "../tsconfig.json",
     // }),
     dts({
-      outputDir: "lib1",
       tsConfigFilePath: "./tsconfig.json",
     }),
   ],
