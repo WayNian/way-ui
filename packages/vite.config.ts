@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
@@ -58,4 +60,8 @@ export default defineConfig({
       tsConfigFilePath: "./tsconfig.json",
     }),
   ],
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
 });
