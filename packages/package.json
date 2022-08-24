@@ -7,8 +7,12 @@
   "author": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "build": "vite build",
+    "build": "pnpm clean && vite build",
+    "clean": "rimraf ./lib",
     "test": "vitest"
   },
   "dependencies": {
@@ -19,6 +23,7 @@
     "@vue/compiler-sfc": "^3.2.37",
     "jsdom": "^20.0.0",
     "postcss": "^8.4.16",
+    "rimraf": "^3.0.2",
     "sass": "^1.54.5",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
