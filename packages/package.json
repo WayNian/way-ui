@@ -6,13 +6,14 @@
   "license": "ISC",
   "author": "",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
     "build": "pnpm clean && vite build",
-    "clean": "rimraf ./lib",
+    "clean": "rimraf ./lib && rimraf ./es",
     "test": "vitest"
   },
   "dependencies": {

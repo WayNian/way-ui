@@ -1,7 +1,6 @@
 /// <reference types="vitest" />
 
 import { defineConfig } from "vite";
-import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 
@@ -10,12 +9,12 @@ export default defineConfig({
   build: {
     target: "modules",
     //打包文件目录
-    outDir: "lib",
+    outDir: "es",
     //压缩
     minify: false,
     lib: {
-      name: "way-ui",
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: "src/index.ts",
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       //忽略打包vue文件
@@ -23,40 +22,35 @@ export default defineConfig({
       input: ["src/index.ts"],
       output: [
         {
-          format: "esm",
+          format: "es",
           //不用打包成.es.js,这里我们想把它打包成.js
+          entryFileNames: "[name].js",
+          //让打包目录和我们目录对应
+          preserveModules: true,
+          //配置打包根目录
+          dir: "es",
+          preserveModulesRoot: "src",
+        },
+        {
+          format: "cjs",
           entryFileNames: "[name].js",
           //让打包目录和我们目录对应
           preserveModules: true,
           //配置打包根目录
           dir: "lib",
           preserveModulesRoot: "src",
-          globals: {
-            vue: "Vue",
-          },
         },
-        // {
-        //   format: "cjs",
-        //   entryFileNames: "[name].js",
-        //   //让打包目录和我们目录对应
-        //   preserveModules: true,
-        //   //配置打包根目录
-        //   dir: "lib",
-        //   preserveModulesRoot: "src",
-        //   globals: {
-        //     vue: "Vue",
-        //   },
-        // },
       ],
     },
   },
+
   plugins: [
     vue(),
-    // dts({
-    //   outputDir: "es",
-    //   tsConfigFilePath: "../tsconfig.json",
-    // }),
     dts({
+      tsConfigFilePath: "./tsconfig.json",
+    }),
+    dts({
+      outputDir: "lib",
       tsConfigFilePath: "./tsconfig.json",
     }),
   ],
