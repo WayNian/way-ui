@@ -9,11 +9,13 @@
   "module": "es/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "es"
   ],
   "scripts": {
     "build": "pnpm clean && vite build",
     "clean": "rimraf ./lib && rimraf ./es",
+    "dev": "pnpm clean && vite build -w",
     "test": "vitest"
   },
   "dependencies": {
