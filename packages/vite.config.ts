@@ -17,9 +17,9 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
+      input: ["src/index.ts"],
       //忽略打包vue文件
       external: ["vue"],
-      input: ["src/index.ts"],
       output: [
         {
           format: "es",

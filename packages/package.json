@@ -13,7 +13,8 @@
     "es"
   ],
   "scripts": {
-    "build": "pnpm clean && vite build",
+    "build": "pnpm clean && vite build && pnpm build:css",
+    "build:css": "esno build/buildCss",
     "clean": "rimraf ./lib && rimraf ./es",
     "dev": "pnpm clean && vite build -w",
     "test": "vitest"
@@ -24,6 +25,9 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/compiler-sfc": "^3.2.37",
+    "cpy": "^9.0.1",
+    "esno": "^0.16.3",
+    "fast-glob": "^3.2.11",
     "jsdom": "^20.0.0",
     "postcss": "^8.4.16",
     "rimraf": "^3.0.2",
